@@ -84,4 +84,75 @@
             window.open(imageUrl, '_blank');
         });
     });
+
+
+
+// Create an array to hold the shuffled image URLs
+const shuffledImageUrls = Array.from(imageLinks).map(link => link.getAttribute('href'));
+
+// Function to shuffle an array (Fisher-Yates algorithm)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Shuffle the array of image URLs
+shuffleArray(shuffledImageUrls);
+
+// Update the image links with the shuffled URLs
+imageLinks.forEach((link, index) => {
+    link.setAttribute('href', shuffledImageUrls[index]);
+    link.querySelector('img').setAttribute('src', shuffledImageUrls[index]);
+});
+
+    
 </script>
+
+<script>
+    // Get all "dream" divs
+    const dreamDivs = document.querySelectorAll('.dream');
+
+    // Get all image links
+
+    // Calculate the number of images per dream
+    const imagesPerDream = Math.ceil(imageLinks.length / dreamDivs.length);
+
+    // Create an array to hold the shuffled image URLs
+
+    // Function to shuffle an array (Fisher-Yates algorithm)
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    // Shuffle the array of image URLs
+    shuffleArray(shuffledImageUrls);
+
+    // Distribute shuffled image URLs to "dream" divs
+    dreamDivs.forEach((dreamDiv, dreamIndex) => {
+        const startIndex = dreamIndex * imagesPerDream;
+        const endIndex = Math.min(startIndex + imagesPerDream, shuffledImageUrls.length);
+        
+        for (let i = startIndex; i < endIndex; i++) {
+            const imageLink = dreamDiv.querySelector('.image-link:nth-child(' + (i - startIndex + 1) + ')');
+            if (imageLink) {
+                imageLink.setAttribute('href', shuffledImageUrls[i]);
+                imageLink.querySelector('img').setAttribute('src', shuffledImageUrls[i]);
+            }
+        }
+    });
+
+    // Add click event listeners to open images in new tabs
+    imageLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const imageUrl = link.getAttribute('href');
+            window.open(imageUrl, '_blank');
+        });
+    });
+</script>
+
