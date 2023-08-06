@@ -13,113 +13,26 @@
             </text>
         </svg>
     </div>
-<div class="container">
-
-    <div class="box">
-        <div class="dream">
-            <a class="image-link" href="1.png" target="_blank"><img src="1.png" alt=""></a>
-            <a class="image-link" href="2.png" target="_blank"><img src="2.png" alt=""></a>
-            <a class="image-link" href="3.png" target="_blank"><img src="3.png" alt=""></a>
-            <a class="image-link" href="4.png" target="_blank"><img src="4.png" alt=""></a>
-            <a class="image-link" href="15.png" target="_blank"><img src="15.png" alt=""></a>
-            <a class="image-link" href="16.png" target="_blank"><img src="16.png" alt=""></a>
-            <a class="image-link" href="17.png" target="_blank"><img src="17.png" alt=""></a>
-            <a class="image-link" href="25.png" target="_blank"><img src="25.png" alt=""></a>
-            <a class="image-link" href="19.png" target="_blank"><img src="19.png" alt=""></a>
-            <a class="image-link" href="26.png" target="_blank"><img src="26.png" alt=""></a>
-            <a class="image-link" href="27.png" target="_blank"><img src="27.png" alt=""></a>
-            <a class="image-link" href="28.png" target="_blank"><img src="28.png" alt=""></a>
-            <a class="image-link" href="37.png" target="_blank"><img src="37.png" alt=""></a>
-            <a class="image-link" href="38.png" target="_blank"><img src="38.png" alt=""></a>
-            <a class="image-link" href="39.png" target="_blank"><img src="39.png" alt=""></a>
-            <a class="image-link" href="42.png" target="_blank"><img src="42.png" alt=""></a>
-            <a class="image-link" href="18.png" target="_blank"><img src="18.png" alt=""></a>
-        </div>
-        <div class="dream">
-            <a class="image-link" href="5.png" target="_blank"><img src="5.png" alt=""></a>
-            <a class="image-link" href="6.png" target="_blank"><img src="6.png" alt=""></a>
-            <a class="image-link" href="7.png" target="_blank"><img src="7.png" alt=""></a>
-            <a class="image-link" href="8.png" target="_blank"><img src="8.png" alt=""></a>
-            <a class="image-link" href="9.png" target="_blank"><img src="9.png" alt=""></a>
-            <a class="image-link" href="29.png" target="_blank"><img src="29.png" alt=""></a>
-            <a class="image-link" href="30.png" target="_blank"><img src="30.png" alt=""></a>
-            <a class="image-link" href="31.png" target="_blank"><img src="31.png" alt=""></a>
-            <a class="image-link" href="32.png" target="_blank"><img src="32.png" alt=""></a>
-            <a class="image-link" href="40.png" target="_blank"><img src="40.png" alt=""></a>
-            <a class="image-link" href="41.png" target="_blank"><img src="41.png" alt=""></a>
-            <a class="image-link" href="20.png" target="_blank"><img src="20.png" alt=""></a>
-            <a class="image-link" href="21.png" target="_blank"><img src="21.png" alt=""></a>
-            
-        </div>
-        <div class="dream">
-            <a class="image-link" href="10.png" target="_blank"><img src="10.png" alt=""></a>
-            <a class="image-link" href="11.png" target="_blank"><img src="11.png" alt=""></a>
-            <a class="image-link" href="12.png" target="_blank"><img src="12.png" alt=""></a>
-            <a class="image-link" href="13.png" target="_blank"><img src="13.png" alt=""></a>
-            <a class="image-link" href="14.png" target="_blank"><img src="14.png" alt=""></a>
-            <a class="image-link" href="24.png" target="_blank"><img src="24.png" alt=""></a>
-            <a class="image-link" href="22.png" target="_blank"><img src="22.png" alt=""></a>
-            <a class="image-link" href="23.png" target="_blank"><img src="23.png" alt=""></a>
-            <a class="image-link" href="33.png" target="_blank"><img src="33.png" alt=""></a>
-            <a class="image-link" href="34.png" target="_blank"><img src="34.png" alt=""></a>
-            <a class="image-link" href="35.png" target="_blank"><img src="35.png" alt=""></a>
-            <a class="image-link" href="36.png" target="_blank"><img src="36.png" alt=""></a>
-            <a class="image-link" href="43.png" target="_blank"><img src="43.png" alt=""></a>
-            <a class="image-link" href="44.png" target="_blank"><img src="44.png" alt=""></a>
-            <a class="image-link" href="45.png" target="_blank"><img src="45.png" alt=""></a>
+    <div class="container">
+        <div class="box">
+            <div class="dream" id="dream1"></div>
+            <div class="dream" id="dream2"></div>
+            <div class="dream" id="dream3"></div>
         </div>
     </div>
-</div>
 </body>
 </html>
 <script>
-    const imageLinks = document.querySelectorAll('.image-link');
+    const imageLinks = [
+        "1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png",
+        "9.png", "10.png", "11.png", "12.png", "13.png", "14.png", "15.png",
+        "16.png", "17.png", "18.png", "19.png", "20.png", "21.png", "22.png",
+        "23.png", "24.png", "25.png", "26.png", "27.png", "28.png", "29.png",
+        "30.png", "31.png", "32.png", "33.png", "34.png", "35.png", "36.png",
+        "37.png", "38.png", "39.png", "40.png", "41.png", "42.png", "43.png",
+        "44.png", "45.png"
+    ];
 
-    imageLinks.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const imageUrl = link.getAttribute('href');
-            window.open(imageUrl, '_blank');
-        });
-    });
-
-
-
-// Create an array to hold the shuffled image URLs
-const shuffledImageUrls = Array.from(imageLinks).map(link => link.getAttribute('href'));
-
-// Function to shuffle an array (Fisher-Yates algorithm)
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-// Shuffle the array of image URLs
-shuffleArray(shuffledImageUrls);
-
-// Update the image links with the shuffled URLs
-imageLinks.forEach((link, index) => {
-    link.setAttribute('href', shuffledImageUrls[index]);
-    link.querySelector('img').setAttribute('src', shuffledImageUrls[index]);
-});
-
-    
-</script>
-
-<script>
-    // Get all "dream" divs
-    const dreamDivs = document.querySelectorAll('.dream');
-
-    // Get all image links
-
-    // Calculate the number of images per dream
-    const imagesPerDream = Math.ceil(imageLinks.length / dreamDivs.length);
-
-    // Create an array to hold the shuffled image URLs
-
-    // Function to shuffle an array (Fisher-Yates algorithm)
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -127,30 +40,24 @@ imageLinks.forEach((link, index) => {
         }
     }
 
-    // Shuffle the array of image URLs
-    shuffleArray(shuffledImageUrls);
+    // Shuffle the array of image links
+    shuffleArray(imageLinks);
 
-    // Distribute shuffled image URLs to "dream" divs
-    dreamDivs.forEach((dreamDiv, dreamIndex) => {
-        const startIndex = dreamIndex * imagesPerDream;
-        const endIndex = Math.min(startIndex + imagesPerDream, shuffledImageUrls.length);
-        
-        for (let i = startIndex; i < endIndex; i++) {
-            const imageLink = dreamDiv.querySelector('.image-link:nth-child(' + (i - startIndex + 1) + ')');
-            if (imageLink) {
-                imageLink.setAttribute('href', shuffledImageUrls[i]);
-                imageLink.querySelector('img').setAttribute('src', shuffledImageUrls[i]);
-            }
-        }
-    });
+    const dreamDivs = [document.getElementById("dream1"), document.getElementById("dream2"), document.getElementById("dream3")];
 
-    // Add click event listeners to open images in new tabs
-    imageLinks.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const imageUrl = link.getAttribute('href');
-            window.open(imageUrl, '_blank');
-        });
+    let dreamIndex = 0;
+    imageLinks.forEach(imageLink => {
+        const image = document.createElement("img");
+        image.src = imageLink;
+        image.alt = "";
+        const imageLinkElement = document.createElement("a");
+        imageLinkElement.classList.add("image-link");
+        imageLinkElement.href = imageLink;
+        imageLinkElement.target = "_blank";
+        imageLinkElement.appendChild(image);
+
+        dreamDivs[dreamIndex].appendChild(imageLinkElement);
+
+        dreamIndex = (dreamIndex + 1) % dreamDivs.length;
     });
 </script>
-
