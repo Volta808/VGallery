@@ -14,21 +14,6 @@ text-align: center;
 margin: 40px 20px 0 20px;
 }
 
-.container .heading{
-
-}
-
-.container .heading h3{
-font-size: 3em;
-font-weight: bolder;
-border-bottom: 3px solid #222;
-padding-bottom: 10px;
-margin-bottom: 40px;
-}
-
-.container .heading h3 span{
-font-weight: 100;
-}
 
 .container .box{
     display: flex;
@@ -61,4 +46,29 @@ width: 32.5%;
 body{
     background: rgb(168,168,168);
     background: linear-gradient(90deg, rgba(168,168,168,1) 0%, rgba(255,255,255,1) 35%, rgba(154,154,154,1) 100%);
+}
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+svg {
+	font-family: "Russo One", sans-serif;
+	width: 100%; height: 100%;
+    align-items: center;
+}
+svg text {
+	animation: stroke 5s infinite alternate;
+	stroke-width: 2;
+	stroke: #365FA0;
+	font-size: 100px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); }
+	80%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+	100% {
+		fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
 }
