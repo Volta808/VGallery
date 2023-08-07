@@ -37,7 +37,9 @@ const imageLinks = [
     "72.png", "73.png", "74.png", "75.png", "76.png", "77.png", "78.png",
     "79.png", "80.png", "81.png", "82.png", "83.png", "84.png", "85.png",
     "86.png", "87.png", "88.png", "89.png", "90.png", "91.png", "92.png",
-    "93.png", "94.png", "95.png", "96.png", "97.png"
+    "93.png", "94.png", "95.png", "96.png", "97.png", "98.png", "99.png",
+    "100.png", "101.png", "102.png", "103.png", "104.png", "105.png",
+    "106.png", "107.png", "108.png", "109.png"
 ];
 
 
@@ -58,11 +60,11 @@ const imageLinks = [
     let dreamIndex = 0;
     imageLinks.forEach(imageLink => {
         const image = document.createElement("img");
-        image.src = imageLink;
+        image.src = "images/" + imageLink;
         image.alt = "";
         const imageLinkElement = document.createElement("a");
         imageLinkElement.classList.add("image-link");
-        imageLinkElement.href = imageLink;
+        imageLinkElement.href = "images/" + imageLink;
         imageLinkElement.target = "_blank";
         imageLinkElement.appendChild(image);
 
